@@ -1,0 +1,2744 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      cursor: pointer;
+    }
+
+    a,
+    input[type=submit],
+    button {
+      cursor: pointer;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .container {
+      max-width: 1125px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+    }
+
+    /* ===== header ===== */
+
+    header {
+      font-family: Tahoma, sans-serif;
+    }
+
+    .header__schedule {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      background: #333333;
+      color: #999999;
+      font-size: 13px;
+    }
+
+    .header__top {
+      position: relative;
+      width: 100%;
+      min-height: 150px;
+      background: #000;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: flex-start;
+      width: 383px;
+      height: 100%;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 340px;
+      height: 150px;
+      background: #ff9900;
+    }
+
+    .logo__img {
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+
+    .logo__text {
+      position: relative;
+      left: 20px;
+      font-family: Calibri, sans-serif;
+      font-weight: bold;
+      font-size: 28px;
+    }
+
+    .logo__text_red {
+      color: #f00;
+    }
+
+    .logo_tr {
+      width: 0;
+      height: 0;
+      border-top: 75px solid transparent;
+      border-left: 42px solid #ff9900;
+      border-bottom: 75px solid transparent;
+    }
+
+    .links {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: flex-start;
+      width: 439px;
+      max-width: 100%;
+      height: 38px;
+    }
+
+    .links_tr {
+      width: 0;
+      height: 0;
+      border-top: 19px solid transparent;
+      border-right: 17px solid #ff9900;
+      border-bottom: 19px solid transparent;
+    }
+
+    .links__list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      width: calc(100% - 17px);
+      padding-left: 51px;
+      background: #f90;
+    }
+
+    .links__list img {
+      margin-right: 17px;
+    }
+
+    .contacts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .contacts__item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      max-width: 200px;
+    }
+
+    .contacts__logo {
+      margin-right: 13px;
+    }
+
+    .contacts__item:first-child {
+      margin-right: 25px;
+    }
+
+    .contacts__item:last-child {
+      margin-left: 25px;
+    }
+
+    .contacts__item p {
+      color: #fff;
+      font-family: Tahoma, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 28px;
+    }
+
+    .contacts__item p.fw_normal {
+      font-weight: normal;
+    }
+
+    .button_bar {
+      position: absolute;
+      top: calc(50% - 15px);
+      right: calc(50% - 400px);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .button__item {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border: none;
+      outline: none;
+      background: #111;
+    }
+
+    .button__item_num {
+      position: absolute;
+      top: -5px;
+      right: -3px;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .header__nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 50px;
+      padding: 10px 0;
+    }
+
+    .header__nav a {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+      width: 110px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .header__nav a:hover {
+      text-decoration: underline;
+    }
+
+    .header__nav a:active {
+      opacity: 0.7;
+    }
+
+    .header__main-img {
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+
+    .header__main_item {
+      width: 100%;
+      height: 790px;
+      outline: none;
+    }
+
+    .header__main_item_1 {
+      background: url(img/background.jpg) top center / cover;
+      background-size: cover;
+    }
+
+    .header__main_item_2 {
+      background: url(img/background2.jpg) top center / cover;
+      background-size: cover;
+    }
+
+    .header__main_item_3 {
+      background: url(img/background3.jpg) top center / cover;
+      background-size: cover;
+    }
+
+    #main .slick-list {
+      overflow: hidden;
+    }
+
+    #main .slick-track {
+      display: flex;
+    }
+
+    #main .slick-arrow {
+      position: absolute;
+      top: calc(50% - 67.5px);
+      width: 40px;
+      height: 135px;
+      border: none;
+      outline: none;
+      font-size: 0;
+      z-index: 10;
+    }
+
+    #main .slick-prev {
+      left: 0;
+      background: url(img/prev.png) top center / cover;
+    }
+
+    #main .slick-next {
+      right: 0;
+      background: url(img/next.png) top center / cover;
+    }
+
+    .header__main-img .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 65px;
+      height: 100%;
+    }
+
+    header h1 {
+      position: relative;
+      top: -91px;
+      text-transform: uppercase;
+      font-size: 48px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    header h1 .h1_orange {
+      color: #ff9900;
+    }
+
+    .header__main-img_subtitle {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .header__request {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 232px;
+      height: 64px;
+      background: #ff9900;
+      position: relative;
+      top: 25px;
+    }
+
+    .header__request:hover {
+      background: #ff9933;
+    }
+
+    .header__request:active {
+      background: #ffcc66;
+    }
+
+    /* ===== complects ===== */
+
+    .complects {
+      font-family: Arial, sans-serif;
+      padding-top: 51px;
+      padding-bottom: 15px;
+      background: url(img/complects.jpg) no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .complects__title {
+      margin: 0 0 31px 0;
+      text-align: center;
+      font-size: 37px;
+      line-height: 44px;
+      text-transform: uppercase;
+    }
+
+    .complects__title_red {
+      color: #ff0000;
+    }
+
+    .infograph {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .infograph_hr {
+      width: 60px;
+      height: 3px;
+      background: #ff9900;
+    }
+
+    .infograph_square {
+      width: 11px;
+      height: 11px;
+      margin: 0 21px;
+      border: 2px solid #000000;
+    }
+
+    .infograph.whiteBordered .infograph_square {
+      border: 2px solid #ffffff;
+    }
+
+    .complects__motto {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    .complects h3 {
+      margin: 43px 0;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .h3_red {
+      color: #ff3300;
+    }
+
+    .benefit {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .benefit__item {
+      position: relative;
+      max-width: 100%;
+      width: 345px;
+      padding: 10px 15px 21px 15px;
+      margin-bottom: 30px;
+      background: #efefef;
+      font-family: Tahoma, sans-serif;
+      cursor: pointer;
+    }
+
+    .benefit__left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 0;
+      opacity: 0;
+      background: #ff9900;
+      transition: .6s all;
+    }
+
+    .benefit__item:hover .benefit__left {
+      height: 100px;
+      opacity: 1;
+    }
+
+    .benefit__top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 6px;
+      opacity: 0;
+      background: #ff9900;
+      transition: .6s all;
+    }
+
+    .benefit__item:hover .benefit__top {
+      width: 100px;
+      opacity: 1;
+    }
+
+    .benefit__right {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 6px;
+      height: 0;
+      opacity: 0;
+      background: #ff9900;
+      transition: .6s all;
+    }
+
+    .benefit__item:hover .benefit__right {
+      height: 100px;
+      opacity: 1;
+    }
+
+    .benefit__bottom {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 6px;
+      opacity: 0;
+      background: #ff9900;
+      transition: .6s all;
+    }
+
+    .benefit__item:hover .benefit__bottom {
+      width: 100px;
+      opacity: 1;
+    }
+
+    .benefit__item_logo {
+      margin: 0 auto;
+    }
+
+    .benefit__item_title {
+      margin: 20px 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    .benefit__item_text {
+      text-align: center;
+      font-size: 14px;
+      line-height: 23px;
+    }
+
+    /* ===== advantages ===== */
+
+    .advantages {
+      font-family: Arial, sans-serif;
+      background: url(img/advantages_background.jpg) no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      padding-bottom: 67px;
+    }
+
+    .advantages__title {
+      padding: 46px 0 87px 0;
+      text-align: center;
+    }
+
+    .advantages__title_orange {
+      color: #ff9900;
+    }
+
+    .advantages__list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .advantage__item {
+      width: 240px;
+      margin-bottom: 57px;
+      padding: 0 10px;
+    }
+
+    .advantage__item_logo {
+      margin: 0 auto;
+    }
+
+    .advantage__item_logo.margin15 {
+      margin-top: 15px;
+    }
+
+    .advantage__item_title {
+      margin: 20px 0 15px 0;
+      text-align: center;
+      line-height: 21px;
+    }
+
+    .advantage__item_text {
+      text-align: center;
+      font-size: 13px;
+      line-height: 15px;
+    }
+
+    .free-consultation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 320px;
+      max-width: 100%;
+      height: 64px;
+      margin: 0 auto;
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      background: #ff9900;
+    }
+
+    .free-consultation:hover {
+      background: #ff9933;
+    }
+
+    .free-consultation:active {
+      background: #ffcc66;
+    }
+
+    /* ===== catalog ===== */
+
+    .catalog {
+      font-family: Arial, sans-serif;
+      padding: 89px 0 40px 0;
+      background: #f1f0f0;
+    }
+
+    .catalog__title {
+      font-size: 30px;
+      text-transform: uppercase;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    .catalog__subtitle {
+      margin: 20px 0;
+      font-size: 20px;
+      font-weight: normal;
+      text-align: center;
+      font-family: Tahoma, sans-serif;
+    }
+
+    .catalog__list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .catalog__item {
+      width: 236px;
+      padding: 0 10px 15px 10px;
+      ;
+      margin-bottom: 48px;
+      background: #fff;
+    }
+
+    .catalog__item_logo {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 181px;
+    }
+
+    .catalog__item_title {
+      min-height: 46px;
+      margin: 20px 0;
+      text-align: center;
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    .catalog__item_list li {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .catalog__item_more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 175px;
+      height: 49px;
+      margin: 26px auto 0 auto;
+      border: 2px solid #e1e1e1;
+      background: #ff9900;
+      font-size: 14px;
+    }
+
+    .catalog__item_more:hover {
+      background: #ff9933;
+    }
+
+    .catalog__item_more:active {
+      background: #ffcc66;
+    }
+
+    .toCatalog {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 232px;
+      height: 64px;
+      margin: 0 auto;
+      font-size: 18px;
+      font-weight: bold;
+      background: #ff9900;
+    }
+
+    .toCatalog:hover {
+      background: #ff9933;
+    }
+
+    .toCatalog:active {
+      background: #ffcc66;
+    }
+
+    /* ===== work ===== */
+
+    .work {
+      padding: 24px 0 60px 0;
+      background: url(img/work_background.jpg) no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .work__title {
+      font-size: 30px;
+      font-weight: normal;
+      text-align: center;
+      color: #fff;
+    }
+
+    .work .whiteBordered {
+      margin: 10px 0 27px 0;
+    }
+
+    .work__item {
+      position: relative;
+      width: 72px;
+      min-height: 72px;
+      margin: 0 auto;
+    }
+
+    .work__item img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .work__item_text {
+      position: absolute;
+      top: 0;
+      width: 320px;
+      color: #fff;
+    }
+
+    .work__item_text.left {
+      right: 100px;
+    }
+
+    .work__item_text.right {
+      left: 100px;
+    }
+
+    .work__item_title {
+      margin: 0 0 20px 0;
+      font-size: 17px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .work__item_text p {
+      font-size: 14px;
+    }
+
+    .whiteLine {
+      width: 5px;
+      height: 39px;
+      margin: 0 auto;
+      background: #fff;
+    }
+
+    /* ===== aboutUs ===== */
+
+    .aboutUs {
+      padding: 46px 0;
+    }
+
+    .aboutUs__title {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: normal;
+    }
+
+    .aboutUs .infograph {
+      margin: 20px 0;
+    }
+
+    .aboutUs__list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .aboutUs__item {
+      width: 240px;
+      min-width: 240px;
+      margin-bottom: 30px;
+      padding: 0 10px;
+    }
+
+    .aboutUs__item_logo {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      height: 69px;
+    }
+
+    .aboutUs__item_num {
+      margin: 15px 0;
+      font-size: 37px;
+      font-weight: bold;
+      color: #d40404;
+      text-align: center;
+    }
+
+    .aboutUs__item_text {
+      text-align: center;
+      font-size: 17px;
+    }
+
+    /* ===== news ===== */
+
+    .news {
+      background: url(img/news_background.jpg) no-repeat center center fixed;
+      background-size: cover;
+      padding: 35px 0;
+    }
+
+    .news__title {
+      text-align: center;
+      font-size: 30px;
+      color: #ffffff;
+    }
+
+    .news__subtitle {
+      text-align: center;
+      font-size: 19px;
+      line-height: 29px;
+      color: #ffffff;
+    }
+
+    .news__list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .news .infograph {
+      margin: 29px 0 59px 0;
+    }
+
+    .news__item {
+      width: 242px;
+      padding: 0 10px 20px 10px;
+      margin-bottom: 50px;
+      background: #fff;
+    }
+
+    .news__item_title {
+      min-height: 52px;
+      padding: 11px 0;
+      font-size: 13px;
+    }
+
+    .news__item_img {
+      width: 100%;
+      height: 125px;
+    }
+
+    .news__item_data {
+      position: relative;
+      top: -12.5px;
+      width: 194px;
+      height: 25px;
+    }
+
+    .news__item_data_left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 184px;
+      height: 25px;
+      padding: 0 12px;
+      background: #deb61a;
+    }
+
+    .news__item_data_tr {
+      position: absolute;
+      top: 3.5px;
+      right: 1.1px;
+      transform: rotate(45deg);
+      width: 16.5px;
+      height: 16.5px;
+      background: #deb61a;
+    }
+
+    .new__item_date,
+    .new__item_views {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+    }
+
+    .new__item_date img,
+    .new__item_views img {
+      margin-right: 6px;
+    }
+
+    .news__item_data p {
+      font-size: 12px;
+    }
+
+    .news__item_text {
+      font-family: Tahoma, sans-serif;
+      font-size: 11px;
+    }
+
+    .news__readAll {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 232px;
+      height: 64px;
+      margin: 0 auto;
+      font-size: 18px;
+      font-weight: bold;
+      background: #ff9900;
+    }
+
+    .news__readAll:hover {
+      background: #ff9933;
+    }
+
+    .news__readAll:active {
+      background: #ffcc66;
+    }
+
+    /* ===== feedback ===== */
+
+    .feedback {
+      padding: 40px 0 60px 0;
+    }
+
+    .feedback__title {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 30px;
+      font-weight: normal;
+    }
+
+    .feedback .infograph {
+      margin: 30px 0;
+    }
+
+    .clients__list {
+      width: 1000px;
+      max-width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .clients__list .slick-track {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .clients__list img {
+      outline: none;
+    }
+
+    .feedback__title2 {
+      margin-top: 70px;
+    }
+
+    .reviews {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .reviews__list {
+      position: relative;
+      width: 477px;
+      max-width: 100%;
+    }
+
+    .reviews__list .slick-list {
+      overflow: hidden;
+    }
+
+    .reviews__list .slick-track {
+      display: flex;
+    }
+
+    .reviews__list .slick-arrow {
+      position: absolute;
+      top: calc(50% - 27.5px);
+      width: 30px;
+      height: 55px;
+      border: none;
+      outline: none;
+      font-size: 0;
+      z-index: 10;
+    }
+
+    .reviews__list .slick-prev {
+      left: -15px;
+      background: url(img/ar_prev.png) top center / cover;
+    }
+
+    .reviews__list .slick-next {
+      right: -15px;
+      background: url(img/ar_next.png) top center / cover;
+    }
+
+    .focused__review {
+      width: 477px;
+      max-width: 100%;
+      padding: 20px 40px;
+      border: 1px solid #f00;
+      outline: none;
+    }
+
+    .focused__review p {
+      font-size: 12px;
+    }
+
+    .review__date,
+    .review__text {
+      font-weight: bold;
+    }
+
+    .review_red {
+      color: #f00;
+    }
+
+    .review__stars {
+      display: inline;
+    }
+
+    .clients_else {
+      max-width: 100%;
+    }
+
+    /* ===== form ===== */
+
+    .form {
+      width: 100%;
+      height: 677px;
+      background: url(img/form_background.jpg) no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .form .container {
+      position: relative;
+      height: 100%;
+    }
+
+    .form__border {
+      position: absolute;
+      top: calc(50% - 246px);
+      right: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 650px;
+    }
+
+    .form form {
+      width: 500px;
+      padding: 13px 25px;
+      background: #000;
+    }
+
+    .form__title {
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: normal;
+      text-align: center;
+      color: #fff;
+    }
+
+    .form__subtitle {
+      margin: 20px 0;
+      color: #fff;
+      font-weight: normal;
+      font-size: 14px;
+    }
+
+    .form_inputs {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .form_inputs input {
+      width: 216px;
+      height: 41px;
+      margin-bottom: 18px;
+      padding: 0 10px;
+      outline: none;
+    }
+
+    .form__message {
+      width: 100%;
+      height: 182px;
+      padding: 12px;
+      outline: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .form__submit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 158px;
+      height: 49px;
+      margin: 10px 0;
+      background: #ff9900;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      outline: none;
+    }
+
+    .form__tr {
+      width: 0;
+      height: 0;
+      border-top: 250px solid transparent;
+      border-left: 112px solid #000;
+      border-bottom: 250px solid transparent;
+    }
+
+    /* ===== map ===== */
+
+    .map {
+      position: relative;
+      height: 568px;
+    }
+
+    .address-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 568px;
+      padding: 0 30px;
+    }
+
+    .address {
+      width: 1021px;
+      max-width: 100%;
+      margin: 60px auto 0 auto;
+      padding: 26px 0 10px 0;
+      max-height: 100px;
+      background: #ff9900;
+    }
+
+    .address p {
+      text-align: center;
+      font-size: 19px;
+    }
+
+    .address p.tel {
+      margin-top: 33px;
+    }
+
+    .address_tel {
+      width: 0;
+      height: 0;
+      border-left: 510px solid transparent;
+      border-right: 510px solid transparent;
+      border-top: 100px solid #ff9900;
+      margin: 0 auto;
+    }
+
+    /* ===== footer ===== */
+
+    footer {
+      position: relative;
+      background: #000;
+    }
+
+    footer .container {
+      padding: 42px 0;
+    }
+
+    .footerLogoContainer {
+      position: absolute;
+      top: 42px;
+      left: 0;
+      display: flex;
+      justify-content: flex-start;
+      width: 32%;
+      max-width: 100%;
+      height: 120px;
+    }
+
+    .footerLogo {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      max-width: calc(100% - 40px);
+      width: 415px;
+      height: 100%;
+      padding-right: 7px;
+      background: #ff9900;
+    }
+
+    .footerLogo img {
+      margin-right: 7px;
+    }
+
+    .footerText {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 19px;
+      font-family: Tahoma, sans-serif;
+    }
+
+    .footerText .red {
+      color: #f00;
+    }
+
+    .footerTr {
+      width: 0;
+      height: 0;
+      border-top: 60px solid transparent;
+      border-left: 25px solid #ff9900;
+      border-bottom: 60px solid transparent;
+    }
+
+    .footer__links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 200px;
+    }
+
+    .footer__link {
+      margin: 0 10px;
+    }
+
+    .footer__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .footer__title {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .footer__item_data {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 30px 0;
+    }
+
+    .footer__item_data .fw_bold {
+      font-weight: bold;
+    }
+
+    .footer__item_logo {
+      width: 24px;
+      margin-right: 13px;
+    }
+
+    .footer__item_text {
+      color: #fff;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .footer__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .footer_contact {
+      width: 190px;
+      height: 34px;
+      padding: 6px;
+      border: none;
+      outline: none;
+      font-size: 12px;
+    }
+
+    .footer_textarea {
+      width: 190px;
+      height: 113px;
+      margin: 11px 0;
+      padding: 6px;
+      outline: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .form_submit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 158px;
+      height: 41px;
+      border: none;
+      outline: none;
+      background: #ff9900;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .form_submit:hover {
+      background: #ff9933;
+    }
+
+    .form_submit:active {
+      background: #ffcc66;
+    }
+
+    .footer__item li {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .footer__num {
+      margin-right: 12px;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 31px;
+      font-family: Tahoma, sans-serif;
+      color: #ff9800;
+    }
+
+    .footer__num_link {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 31px;
+      color: #fff;
+    }
+
+    .underFooter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    .popup__container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .popup {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      width: 450px;
+      max-height: 100%;
+      height: 450px;
+      padding: 20px;
+      border-radius: 15px;
+      background: white;
+    }
+
+    .popup__title {
+      text-align: center;
+      font-size: 36px;
+    }
+
+    .popup form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .popup__contact {
+      max-width: 100%;
+      width: 300px;
+      height: 30px;
+      padding: 0 5px;
+    }
+
+    .popup__textarea {
+      max-width: 100%;
+      width: 300px;
+      height: 150px;
+      padding: 5px;
+      font-family: Tahoma, sans-serif;
+      margin: 20px 0;
+    }
+
+    .popup__submit {
+      max-width: 100%;
+      width: 100px;
+      height: 30px;
+      border: none;
+      outline: none;
+      background: #f90;
+    }
+
+    .popup__submit:hover {
+      background: #ff9933;
+    }
+
+    .popup__submit:active {
+      background: #ffcc66;
+    }
+
+    .popup__close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    .popup__close img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 1124px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      /* ===== header ===== */
+
+      .logo-container {
+        width: 100%;
+        height: 80px;
+      }
+
+      .logo {
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .logo__img {
+        left: 0;
+        margin-left: 10px;
+      }
+
+      .logo__text {
+        left: 0;
+        margin-right: 10px;
+      }
+
+      .logo_tr {
+        display: none;
+      }
+
+      .contacts {
+        position: static;
+        padding: 15px 0;
+      }
+
+      .links {
+        position: static;
+        width: 100%;
+      }
+
+      .links_tr {
+        display: none;
+      }
+
+      .links__list {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .button_bar {
+        right: 10px;
+        bottom: -80px;
+      }
+
+      #main .slick-arrow {
+        display: none !important;
+      }
+
+      /* ===== benefit ===== */
+
+      .benefit {
+        justify-content: space-around;
+      }
+
+      /* ===== work ===== */
+
+      .work__item {
+        position: static;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .work__item img {
+        width: 72px;
+        min-width: 72px;
+        height: 72px;
+        margin-right: 20px;
+      }
+
+      .work__item_text {
+        position: static;
+      }
+
+      .work__item_title {
+        margin-bottom: 0px;
+      }
+
+      .whiteLine {
+        display: none;
+      }
+
+      /* ===== reviews ===== */
+
+      .reviews {
+        flex-direction: column-reverse;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .focused__review {
+        width: 100%;
+      }
+
+      .clients_else {
+        width: 496px;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      /* ===== form ===== */
+
+      .form .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form__border {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+      }
+
+      .form form {
+        background: none;
+        max-width: 100%;
+      }
+
+      .form__subtitle {
+        text-align: center;
+      }
+
+      .form .inputs {
+        max-width: 100%;
+      }
+
+      .form__tr {
+        display: none;
+      }
+
+      .footerLogoContainer {
+        position: static;
+        width: 100%;
+        height: 70px;
+      }
+
+      .footerLogo {
+        justify-content: center;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .footerTr {
+        display: none;
+      }
+
+      .footer__list {
+        flex-direction: column;
+      }
+
+      .footer__item {
+        width: 320px;
+        max-width: 100%;
+        margin: 10px auto;
+      }
+
+      .footer__links {
+        width: 320px;
+        max-width: 100%;
+      }
+
+      .footer__links {
+        margin-top: 0;
+      }
+
+      .footer_contact,
+      .footer_textarea,
+      .form_submit {
+        width: 100%;
+      }
+
+      @media (max-width: 530px) {
+        .form_inputs input {
+          width: 100%;
+        }
+
+        .form__submit {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 512px) {
+        .contacts {
+          display: block;
+          padding: 0;
+        }
+
+        .contacts__item:first-child,
+        .contacts__item:last-child {
+          margin: 10px auto;
+        }
+
+        .links__list {
+          justify-content: flex-start;
+          padding-left: 10px;
+        }
+
+        .button_bar {
+          bottom: -105px;
+        }
+
+
+
+        .header__main_item {
+          height: 500px;
+        }
+
+        #main .container {
+          padding: 0 15px;
+        }
+
+        header h1 {
+          text-align: center;
+          font-size: 36px !important;
+          position: static
+        }
+
+        .header__main-img_subtitle {
+          margin: 20px 0;
+          text-align: center;
+        }
+
+        .header__request {
+          margin: 0 auto;
+        }
+
+        .complects {
+          padding: 15px 0;
+        }
+
+        .complects__title {
+          font-size: 24px;
+          line-height: 30px;
+        }
+
+        .complects h3 {
+          margin: 20px 0;
+        }
+
+        .benefit__item {
+          margin-bottom: 15px;
+        }
+
+        .advantages__title {
+          padding: 20px 0;
+        }
+
+        .advantage__item {
+          margin-bottom: 20px;
+        }
+
+        .catalog {
+          padding: 20px 0;
+        }
+
+        .catalog__subtitle {
+          margin: 10px 0;
+        }
+
+        .catalog__item {
+          margin-bottom: 15px;
+        }
+
+        .work {
+          padding-bottom: 5px;
+        }
+
+        .news .infograph {
+          margin: 10px 0 15px 0;
+        }
+
+        .news__item {
+          margin-bottom: 20px;
+        }
+
+        .feedback {
+          padding: 15px 0;
+        }
+
+        .feedback__title2 {
+          margin-top: 20px;
+        }
+
+        .feedback .infograph {
+          margin: 10px 0;
+        }
+
+        footer .container {
+          padding: 15px 0;
+        }
+
+        .footer__item_data {
+          margin: 10px 0;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header__schedule">Обработка заказов пн.-пт. с 9:00 - 18:00, прием заказов через сайт - круглосуточно
+    </div>
+
+    <div class="header__top">
+      <div class="logo-container">
+        <a href="#" class="logo">
+          <img src="img/logo.png" class="logo__img">
+          <p class="logo__text">ПРО-К<span class="logo__text_red">О</span>МПЛЕКТ</p>
+        </a>
+        <div class="logo_tr"></div>
+      </div>
+
+      <div class="contacts">
+        <div class="contacts__item">
+          <img src="img/tel.png" class="contacts__logo">
+          <div class="contacts__data">
+            <p>+7(495) 640-40-66</p>
+            <p>+7(916) 833-66-64</p>
+          </div>
+        </div>
+
+        <div class="contacts__item">
+          <img src="img/house.png" class="contacts__logo">
+          <div class="contacts__data">
+            <p>с 9:00 - 18:00 МСК</p>
+            <p class="fw_normal">info@interprogroum.ru</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="links">
+        <div class="links_tr"></div>
+        <div class="links__list">
+          <a href="#">
+            <img src="img/vk.png">
+          </a>
+          <a href="#">
+            <img src="img/fb.png">
+          </a>
+          <a href="#">
+            <img src="img/tw.png">
+          </a>
+          <a href="#">
+            <img src="img/ok.png">
+          </a>
+          <a href="#">
+            <img src="img/ig.png">
+          </a>
+        </div>
+      </div>
+
+      <div class="button_bar">
+        <a href="#" class="button__item">
+          <img src="img/search.png">
+        </a>
+        <a href="http://про-комплект.рф" class="button__item">
+          <img src="img/base.png">
+          <div class="button__item_num">5</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav class="header__nav">
+        <a href="#main">Главная</a>
+        <a href="#about">О компании</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#work">Услуги</a>
+        <a href="#clients">Партнеры</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+
+    <div class="header__main-img" id="main">
+      <div class="header__main_item header__main_item_1">
+        <div class="container">
+          <h1><span class='h1_orange'>Компания</span> «ПРО-К<span class='h1_orange'>о</span>мплект»</h1>
+          <p class="header__main-img_subtitle">Мы решаем задачи по комплексному обеспечению строительных
+            объектов<br>необходимыми материалами. На время заказа становимся вашим личным<br>отделом снабжения, со всей
+            ответственностью и заинтересованностью.</p>
+          <a href="#" class="header__request">Оставить заявку</a>
+        </div>
+      </div>
+
+      <div class="header__main_item header__main_item_2">
+        <div class="container">
+          <h1><span class='h1_orange'>Комплексное</span> снабжение</h1>
+          <p class="header__main-img_subtitle">
+            Мы являемся прямыми поставщиками самых популярных марок строительных<br>материалов и предлагаем
+            комплексное снабжение по оптимальным ценам
+          </p>
+          <a href="#" class="header__request">Оставить заявку</a>
+        </div>
+      </div>
+
+      <div class="header__main_item header__main_item_3">
+        <div class="container">
+          <h1><span class='h1_orange'>предоставляем</span> день в день</h1>
+          <p class="header__main-img_subtitle">
+            Выстроены четкие и ритмичные цепочки поставок, обеспечивающие<br>доставку расходников и продукции на объекты
+            в минимально сжатые сроки.
+          </p>
+          <a href="#" class="header__request">Оставить заявку</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="complects" id="about">
+    <div class="container">
+      <h2 class="complects__title">КОМПЛЕКТАЦИЯ СТРОИТЕЛЬНЫХ ОБЪЕКТОВ<br>
+        С КОМПАНИЕЙ «ПРО-К<span class="complects__title_red">О</span>МПЛЕКТ»</h2>
+      <div class="infograph">
+        <div class="infograph_hr"></div>
+        <div class="infograph_square"></div>
+        <div class="infograph_hr"></div>
+      </div>
+      <p class="complects__motto">Мы знаем как не просто найти хорошего поставщика - того, кто не подводит по срокам, у
+        кого в наличии необходимые материалы, кто предлагает, а не навязывает. Наша компания становится «своим»
+        поставщиком для наших клиентов.</p>
+
+      <h3>ВЫГОДА ПАРТНЕРОВ С «ПРО-К<span class="h3_red">О</span>МПЛЕКТ»:</h3>
+
+      <div class="benefit">
+        <div class="benefit__item">
+          <img src="img/benefit1.png" class="benefit__item_logo">
+          <h4 class="benefit__item_title">ВОВРЕМЯ ПОЛУЧАЮТ МАТЕРИАЛЫ</h4>
+          <p class="benefit__item_text">Хорошо выстроенные отношения с логистическими компаниями, позволяют точно
+            соблюдать сроки поставки материалов.</p>
+          <div class="benefit__left"></div>
+          <div class="benefit__top"></div>
+          <div class="benefit__right"></div>
+          <div class="benefit__bottom"></div>
+        </div>
+
+        <div class="benefit__item">
+          <img src="img/benefit2.png" class="benefit__item_logo">
+          <h4 class="benefit__item_title">СКИДКИ НА ОБЪЕМЫ</h4>
+          <p class="benefit__item_text">Мы предлагаем выгодные условия на комплексное снабжение, предоставляем хорошие
+            скидки при больших объёмах.</p>
+          <div class="benefit__left"></div>
+          <div class="benefit__top"></div>
+          <div class="benefit__right"></div>
+          <div class="benefit__bottom"></div>
+        </div>
+
+        <div class="benefit__item">
+          <img src="img/benefit3.png" class="benefit__item_logo">
+          <h4 class="benefit__item_title">БЫСТРАЯ ДОСТАВКА МАТЕРИАЛОВ</h4>
+          <p class="benefit__item_text">Мы понимаем, что очень важна скорость, поэтому осуществляем оперативную доставку
+            любых материалов в сжатые сроки</p>
+          <div class="benefit__left"></div>
+          <div class="benefit__top"></div>
+          <div class="benefit__right"></div>
+          <div class="benefit__bottom"></div>
+        </div>
+
+        <div class="benefit__item">
+          <img src="img/benefit4.png" class="benefit__item_logo">
+          <h4 class="benefit__item_title">ПРОГРАММА ЛОЯЛЬНОСТИ</h4>
+          <p class="benefit__item_text">Для постоянных клиентов мы предлагаем бонусы. Для получения юолее подробной
+            информации - обратитесь к менеджерам.</p>
+          <div class="benefit__left"></div>
+          <div class="benefit__top"></div>
+          <div class="benefit__right"></div>
+          <div class="benefit__bottom"></div>
+        </div>
+
+        <div class="benefit__item">
+          <img src="img/benefit5.png" class="benefit__item_logo">
+          <h4 class="benefit__item_title">ОГРУЗКА СО СКЛАДА</h4>
+          <p class="benefit__item_text">Работаем со многими производителями строительных материалов напрямую, меньше
+            звеньев ы цепи - лучше цена и сроки.</p>
+          <div class="benefit__left"></div>
+          <div class="benefit__top"></div>
+          <div class="benefit__right"></div>
+          <div class="benefit__bottom"></div>
+        </div>
+
+        <div class="benefit__item">
+          <img src="img/benefit6.png" class="benefit__item_logo">
+          <h4 class="benefit__item_title">НЕТ ЛИШНИХ ИЗДЕРЖЕК</h4>
+          <p class="benefit__item_text">Мы современная компания,<br>автоматизирующая свои бизнес-процессы и снижающая
+            издержки.</p>
+          <div class="benefit__left"></div>
+          <div class="benefit__top"></div>
+          <div class="benefit__right"></div>
+          <div class="benefit__bottom"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="advantages">
+    <div class="container">
+      <h2 class="advantages__title"><span class="advantages__title_orange">Почему</span> закупать стройматериалы оптом
+        лучше у нас?</h2>
+
+      <div class="advantages__list">
+        <div class="advantage__item">
+          <img src="img/advantage1.png" class="advantage__item_logo">
+          <h4 class="advantage__item_title">Поставка материалов<br>«под ключ»</h4>
+          <p class="advantage__item_text">Наш ассортимент широк настолько, что способен обеспечить всё необходимое для
+            любого этапа строительства или ремонта зданий и помещений.</p>
+        </div>
+
+        <div class="advantage__item">
+          <img src="img/advantage2.png" class="advantage__item_logo">
+          <h4 class="advantage__item_title">Своевременная доставка</h4>
+          <p class="advantage__item_text">Наш ассортимент широк настолько, что способен обеспечить всё необходимое для
+            любого этапа строительства или ремонта зданий и помещений.</p>
+        </div>
+
+        <div class="advantage__item">
+          <img src="img/advantage3.png" class="advantage__item_logo">
+          <h4 class="advantage__item_title">Гарантии сохранности грузов</h4>
+          <p class="advantage__item_text">Наш ассортимент широк настолько, что способен обеспечить всё необходимое для
+            любого этапа строительства или ремонта зданий и помещений.</p>
+        </div>
+
+        <div class="advantage__item">
+          <img src="img/advantage4.png" class="advantage__item_logo">
+          <h4 class="advantage__item_title">Премиальное качество</h4>
+          <p class="advantage__item_text">Наш ассортимент широк настолько, что способен обеспечить всё необходимое для
+            любого этапа строительства или ремонта зданий и помещений.</p>
+        </div>
+
+        <div class="advantage__item">
+          <img src="img/advantage5.png" class="advantage__item_logo">
+          <h4 class="advantage__item_title">Ассортимент</h4>
+          <p class="advantage__item_text">Наш ассортимент широк настолько, что способен обеспечить всё необходимое для
+            любого этапа строительства или ремонта зданий и помещений.</p>
+        </div>
+
+        <div class="advantage__item">
+          <img src="img/advantage6.png" class="advantage__item_logo">
+          <h4 class="advantage__item_title">Логистика</h4>
+          <p class="advantage__item_text">Наш ассортимент широк настолько, что способен обеспечить всё необходимое для
+            любого этапа строительства или ремонта зданий и помещений.</p>
+        </div>
+
+        <div class="advantage__item">
+          <img src="img/advantage7.png" class="advantage__item_logo">
+          <h4 class="advantage__item_title">Инновации</h4>
+          <p class="advantage__item_text">Наш ассортимент широк настолько, что способен обеспечить всё необходимое для
+            любого этапа строительства или ремонта зданий и помещений.</p>
+        </div>
+
+        <div class="advantage__item">
+          <img src="img/advantage8.png" class="advantage__item_logo margin15">
+          <h4 class="advantage__item_title">Клиентоориентированность</h4>
+          <p class="advantage__item_text">Наш ассортимент широк настолько, что способен обеспечить всё необходимое для
+            любого этапа строительства или ремонта зданий и помещений.</p>
+        </div>
+      </div>
+
+      <a href="#" class="free-consultation">Бесплатная консультация</a>
+    </div>
+  </section>
+
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <h2 class="catalog__title">каталог</h2>
+      <h3 class="catalog__subtitle">Комплексное снабжение строительных объектов</h3>
+      <div class="infograph">
+        <div class="infograph_hr"></div>
+        <div class="infograph_square"></div>
+        <div class="infograph_hr"></div>
+      </div>
+
+      <div class="catalog__list">
+        <div class="catalog__item">
+          <div class="catalog__item_logo">
+            <img src="img/catalog1.png">
+          </div>
+          <h4 class="catalog__item_title">Строительные материалы</h4>
+          <ul class="catalog__item_list">
+            <li>Кирпич</li>
+            <li>Камень</li>
+            <li>Цемент</li>
+            <li>Стекло</li>
+            <li>Чугун</li>
+            <li>Пластмасса</li>
+            <li>Композит</li>
+            <li>Дерево</li>
+          </ul>
+          <a href="https://xn----jtbobdflcfff7a.xn--p1ai/shop/" class="catalog__item_more"
+            target="_blank">Подробнее»</a>
+        </div>
+
+        <div class="catalog__item">
+          <div class="catalog__item_logo">
+            <img src="img/catalog2.png">
+          </div>
+          <h4 class="catalog__item_title">Отделочные материалы материалы</h4>
+          <ul class="catalog__item_list">
+            <li>Кирпич</li>
+            <li>Камень</li>
+            <li>Цемент</li>
+            <li>Стекло</li>
+            <li>Чугун</li>
+            <li>Пластмасса</li>
+            <li>Композит</li>
+            <li>Дерево</li>
+          </ul>
+          <a href="https://xn----jtbobdflcfff7a.xn--p1ai/shop/" class="catalog__item_more"
+            target="_blank">Подробнее»</a>
+        </div>
+
+        <div class="catalog__item">
+          <div class="catalog__item_logo">
+            <img src="img/catalog3.png">
+          </div>
+          <h4 class="catalog__item_title">Электроинструмент</h4>
+          <ul class="catalog__item_list">
+            <li>Кирпич</li>
+            <li>Камень</li>
+            <li>Цемент</li>
+            <li>Стекло</li>
+            <li>Чугун</li>
+            <li>Пластмасса</li>
+            <li>Композит</li>
+            <li>Дерево</li>
+          </ul>
+          <a href="https://xn----jtbobdflcfff7a.xn--p1ai/shop/" class="catalog__item_more"
+            target="_blank">Подробнее»</a>
+        </div>
+
+        <div class="catalog__item">
+          <div class="catalog__item_logo">
+            <img src="img/catalog4.png">
+          </div>
+          <h4 class="catalog__item_title">Сантехника</h4>
+          <ul class="catalog__item_list">
+            <li>Кирпич</li>
+            <li>Камень</li>
+            <li>Цемент</li>
+            <li>Стекло</li>
+            <li>Чугун</li>
+            <li>Пластмасса</li>
+            <li>Композит</li>
+            <li>Дерево</li>
+          </ul>
+          <a href="https://xn----jtbobdflcfff7a.xn--p1ai/shop/" class="catalog__item_more"
+            target="_blank">Подробнее»</a>
+        </div>
+
+        <div class="catalog__item">
+          <div class="catalog__item_logo">
+            <img src="img/catalog5.png">
+          </div>
+          <h4 class="catalog__item_title">Сварочное оборудование</h4>
+          <ul class="catalog__item_list">
+            <li>Кирпич</li>
+            <li>Камень</li>
+            <li>Цемент</li>
+            <li>Стекло</li>
+            <li>Чугун</li>
+            <li>Пластмасса</li>
+            <li>Композит</li>
+            <li>Дерево</li>
+          </ul>
+          <a href="https://xn----jtbobdflcfff7a.xn--p1ai/shop/" class="catalog__item_more"
+            target="_blank">Подробнее»</a>
+        </div>
+
+        <div class="catalog__item">
+          <div class="catalog__item_logo">
+            <img src="img/catalog6.png">
+          </div>
+          <h4 class="catalog__item_title">Расходные материалы</h4>
+          <ul class="catalog__item_list">
+            <li>Кирпич</li>
+            <li>Камень</li>
+            <li>Цемент</li>
+            <li>Стекло</li>
+            <li>Чугун</li>
+            <li>Пластмасса</li>
+            <li>Композит</li>
+            <li>Дерево</li>
+          </ul>
+          <a href="https://xn----jtbobdflcfff7a.xn--p1ai/shop/" class="catalog__item_more"
+            target="_blank">Подробнее»</a>
+        </div>
+
+        <div class="catalog__item">
+          <div class="catalog__item_logo">
+            <img src="img/catalog7.png">
+          </div>
+          <h4 class="catalog__item_title">Вентиляция и кондиционирование</h4>
+          <ul class="catalog__item_list">
+            <li>Кирпич</li>
+            <li>Камень</li>
+            <li>Цемент</li>
+            <li>Стекло</li>
+            <li>Чугун</li>
+            <li>Пластмасса</li>
+            <li>Композит</li>
+            <li>Дерево</li>
+          </ul>
+          <a href="https://xn----jtbobdflcfff7a.xn--p1ai/shop/" class="catalog__item_more"
+            target="_blank">Подробнее»</a>
+        </div>
+
+        <div class="catalog__item">
+          <div class="catalog__item_logo">
+            <img src="img/catalog8.png">
+          </div>
+          <h4 class="catalog__item_title">Пожарное оборудование</h4>
+          <ul class="catalog__item_list">
+            <li>Кирпич</li>
+            <li>Камень</li>
+            <li>Цемент</li>
+            <li>Стекло</li>
+            <li>Чугун</li>
+            <li>Пластмасса</li>
+            <li>Композит</li>
+            <li>Дерево</li>
+          </ul>
+
+          <a href="https://xn----jtbobdflcfff7a.xn--p1ai/shop/" class="catalog__item_more"
+            target="_blank">Подробнее»</a>
+        </div>
+      </div>
+
+      <a href="https://xn----jtbobdflcfff7a.xn--p1ai/shop/" class="toCatalog" target="_blank">Перейти в каталог</a>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="container">
+      <h2 class="work__title">Как мы работаем</h2>
+      <div class="infograph whiteBordered">
+        <div class="infograph_hr"></div>
+        <div class="infograph_square"></div>
+        <div class="infograph_hr"></div>
+      </div>
+
+      <div class="work__list">
+        <div class="work__item">
+          <img src="img/work1.png">
+          <div class="work__item_text left">
+            <h3 class="work__item_title">1. Заявка</h3>
+            <p>Направьте вашу заявку нам через сайт или позвоните нам</p>
+          </div>
+        </div>
+        <div class="whiteLine"></div>
+        <div class="work__item">
+          <img src="img/work2.png">
+          <div class="work__item_text right">
+            <h3 class="work__item_title">2. Консультация</h3>
+            <p>Наш специалист свяжется с вами для обсуждения деталей заказа, сроков доставки и вида материала</p>
+          </div>
+        </div>
+        <div class="whiteLine"></div>
+        <div class="work__item">
+          <img src="img/work3.png">
+          <div class="work__item_text left">
+            <h3 class="work__item_title">3. Расчет смены</h3>
+            <p>Мы рассчитаем стоимость вашего заказа и доставки, а также подскажем, есть ли аналоги материалов</p>
+          </div>
+        </div>
+        <div class="whiteLine"></div>
+        <div class="work__item">
+          <img src="img/work4.png">
+          <div class="work__item_text right">
+            <h3 class="work__item_title">4. Оплата</h3>
+            <p>Оплата: наличные, безналичные - любые варианты</p>
+          </div>
+        </div>
+        <div class="whiteLine"></div>
+        <div class="work__item">
+          <img src="img/work5.png">
+          <div class="work__item_text left">
+            <h3 class="work__item_title">5. Доставка</h3>
+            <p>Доставим товар на ваш объект точно в срок консолидированной поставкой или поэтапно</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="aboutUs">
+    <div class="container">
+      <h2 class="aboutUs__title">О нас в цифрах</h2>
+
+      <div class="infograph">
+        <div class="infograph_hr"></div>
+        <div class="infograph_square"></div>
+        <div class="infograph_hr"></div>
+      </div>
+
+      <div class="aboutUs__list">
+        <div class="aboutUs__item">
+          <div class="aboutUs__item_logo">
+            <img src="img/aboutUs1.png">
+          </div>
+          <p class="aboutUs__item_num"><span class="an_nums">112</span></p>
+          <p class="aboutUs__item_text">Положительных отзывов</p>
+        </div>
+
+        <div class="aboutUs__item">
+          <div class="aboutUs__item_logo">
+            <img src="img/aboutUs2.png">
+          </div>
+          <p class="aboutUs__item_num"><span class="an_nums">200</span>+</p>
+          <p class="aboutUs__item_text">Проектов реализованоо</p>
+        </div>
+
+        <div class="aboutUs__item">
+          <div class="aboutUs__item_logo">
+            <img src="img/aboutUs3.png">
+          </div>
+          <p class="aboutUs__item_num"><span class="an_nums">97</span>%</p>
+          <p class="aboutUs__item_text">Довольных клиентов</p>
+        </div>
+
+        <div class="aboutUs__item">
+          <div class="aboutUs__item_logo">
+            <img src="img/aboutUs4.png">
+          </div>
+          <p class="aboutUs__item_num"><span class="an_nums">250</span></p>
+          <p class="aboutUs__item_text">раз победеили на торгаз на гос. тендераз</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news">
+    <div class="container">
+      <h2 class="news__title">Новости</h2>
+      <h3 class="news__subtitle">компании «Про-Комплект» и сторительной отрасли</h3>
+      <div class="infograph whiteBordered">
+        <div class="infograph_hr"></div>
+        <div class="infograph_square"></div>
+        <div class="infograph_hr"></div>
+      </div>
+      <div class="news__list">
+        <div class="news__item">
+          <h4 class="news__item_title"><a href="#">Компания «Про-Комплект» работает в прежнем режиме!</a></h4>
+          <img src="img/news1.jpg" class="news__item_img">
+          <div class="news__item_data">
+            <div class="news__item_data_left">
+              <div class="new__item_date">
+                <img src="img/clock.png">
+                <p class="data_text">18.04.2020</p>
+              </div>
+              <div class="new__item_views">
+                <img src="img/views.png">
+                <p class="data_text">225</p>
+              </div>
+            </div>
+            <div class="news__item_data_tr"></div>
+          </div>
+          <p class="news__item_text">Информируем, что «ПРО-КОМПЛЕКТ» работает в прежнем режиме, чтобы выполнить все
+            обязательства, взятые на себя. пн-пт с 9 до 18</p>
+        </div>
+
+        <div class="news__item">
+          <h4 class="news__item_title"><a href="#">Информация о трубах из полипропилена. Что такое SDR?</a></h4>
+          <img src="img/news2.jpg" class="news__item_img">
+          <div class="news__item_data">
+            <div class="news__item_data_left">
+              <div class="new__item_date">
+                <img src="img/clock.png">
+                <p class="data_text">18.04.2020</p>
+              </div>
+              <div class="new__item_views">
+                <img src="img/views.png">
+                <p class="data_text">225</p>
+              </div>
+            </div>
+            <div class="news__item_data_tr"></div>
+          </div>
+          <p class="news__item_text">Информируем, что «ПРО-КОМПЛЕКТ» работает в прежнем режиме, чтобы выполнить все
+            обязательства, взятые на себя. пн-пт с 9 до 18</p>
+        </div>
+
+        <div class="news__item">
+          <h4 class="news__item_title"><a href="#">Современные виды долговечной фкндаментальной гидроизоляции</a></h4>
+          <img src="img/news3.jpg" class="news__item_img">
+          <div class="news__item_data">
+            <div class="news__item_data_left">
+              <div class="new__item_date">
+                <img src="img/clock.png">
+                <p class="data_text">18.04.2020</p>
+              </div>
+              <div class="new__item_views">
+                <img src="img/views.png">
+                <p class="data_text">225</p>
+              </div>
+            </div>
+            <div class="news__item_data_tr"></div>
+          </div>
+          <p class="news__item_text">Информируем, что «ПРО-КОМПЛЕКТ» работает в прежнем режиме, чтобы выполнить все
+            обязательства, взятые на себя. пн-пт с 9 до 18</p>
+        </div>
+
+        <div class="news__item">
+          <h4 class="news__item_title"><a href="#">Ассортимент мяшких кровельных покрытий</a></h4>
+          <img src="img/news4.jpg" class="news__item_img">
+          <div class="news__item_data">
+            <div class="news__item_data_left">
+              <div class="new__item_date">
+                <img src="img/clock.png">
+                <p class="data_text">18.04.2020</p>
+              </div>
+              <div class="new__item_views">
+                <img src="img/views.png">
+                <p class="data_text">225</p>
+              </div>
+            </div>
+            <div class="news__item_data_tr"></div>
+          </div>
+          <p class="news__item_text">Информируем, что «ПРО-КОМПЛЕКТ» работает в прежнем режиме, чтобы выполнить все
+            обязательства, взятые на себя. пн-пт с 9 до 18</p>
+        </div>
+
+        <div class="news__item">
+          <h4 class="news__item_title"><a href="#">Как ипользовать материалы для фасадной отделки?</a></h4>
+          <img src="img/news5.jpg" class="news__item_img">
+          <div class="news__item_data">
+            <div class="news__item_data_left">
+              <div class="new__item_date">
+                <img src="img/clock.png">
+                <p class="data_text">18.04.2020</p>
+              </div>
+              <div class="new__item_views">
+                <img src="img/views.png">
+                <p class="data_text">225</p>
+              </div>
+            </div>
+            <div class="news__item_data_tr"></div>
+          </div>
+          <p class="news__item_text">Информируем, что «ПРО-КОМПЛЕКТ» работает в прежнем режиме, чтобы выполнить все
+            обязательства, взятые на себя. пн-пт с 9 до 18</p>
+        </div>
+
+        <div class="news__item">
+          <h4 class="news__item_title"><a href="#">Стоимость наружного фундаментального гидробарьера</a></h4>
+          <img src="img/news6.jpg" class="news__item_img">
+          <div class="news__item_data">
+            <div class="news__item_data_left">
+              <div class="new__item_date">
+                <img src="img/clock.png">
+                <p class="data_text">18.04.2020</p>
+              </div>
+              <div class="new__item_views">
+                <img src="img/views.png">
+                <p class="data_text">225</p>
+              </div>
+            </div>
+            <div class="news__item_data_tr"></div>
+          </div>
+          <p class="news__item_text">Информируем, что «ПРО-КОМПЛЕКТ» работает в прежнем режиме, чтобы выполнить все
+            обязательства, взятые на себя. пн-пт с 9 до 18</p>
+        </div>
+
+        <div class="news__item">
+          <h4 class="news__item_title"><a href="#">Полиэтиленовые трубы</a></h4>
+          <img src="img/news7.jpg" class="news__item_img">
+          <div class="news__item_data">
+            <div class="news__item_data_left">
+              <div class="new__item_date">
+                <img src="img/clock.png">
+                <p class="data_text">18.04.2020</p>
+              </div>
+              <div class="new__item_views">
+                <img src="img/views.png">
+                <p class="data_text">225</p>
+              </div>
+            </div>
+            <div class="news__item_data_tr"></div>
+          </div>
+          <p class="news__item_text">Информируем, что «ПРО-КОМПЛЕКТ» работает в прежнем режиме, чтобы выполнить все
+            обязательства, взятые на себя. пн-пт с 9 до 18</p>
+        </div>
+
+        <div class="news__item">
+          <h4 class="news__item_title"><a href="#">Новые скидки на крепеж для
+            кровельных работ</a></h4>
+          <img src="img/news8.jpg" class="news__item_img">
+          <div class="news__item_data">
+            <div class="news__item_data_left">
+              <div class="new__item_date">
+                <img src="img/clock.png">
+                <p class="data_text">18.04.2020</p>
+              </div>
+              <div class="new__item_views">
+                <img src="img/views.png">
+                <p class="data_text">225</p>
+              </div>
+            </div>
+            <div class="news__item_data_tr"></div>
+          </div>
+          <p class="news__item_text">Информируем, что «ПРО-КОМПЛЕКТ» работает в прежнем режиме, чтобы выполнить все
+            обязательства, взятые на себя. пн-пт с 9 до 18</p>
+        </div>
+      </div>
+
+      <a href="#" class="news__readAll">Читать все новости</a>
+    </div>
+  </section>
+
+  <section class="feedback" id="clients">
+    <div class="container">
+      <h2 class="feedback__title">Наши клиенты</h2>
+      <div class="infograph">
+        <div class="infograph_hr"></div>
+        <div class="infograph_square"></div>
+        <div class="infograph_hr"></div>
+      </div>
+
+      <div class="clients__list">
+        <img src="img/client1.png" class="clients__item">
+        <img src="img/client2.png" class="clients__item">
+        <img src="img/client3.png" class="clients__item">
+        <img src="img/client4.png" class="clients__item">
+        <img src="img/client5.png" class="clients__item">
+        <img src="img/client1.png" class="clients__item">
+        <img src="img/client2.png" class="clients__item">
+        <img src="img/client3.png" class="clients__item">
+        <img src="img/client4.png" class="clients__item">
+        <img src="img/client5.png" class="clients__item">
+      </div>
+
+      <h2 class="feedback__title feedback__title2">Отзывы наших клиентов</h2>
+      <div class="infograph">
+        <div class="infograph_hr"></div>
+        <div class="infograph_square"></div>
+        <div class="infograph_hr"></div>
+      </div>
+
+      <div class="reviews">
+        <div class="reviews__list">
+          <div class="focused__review">
+            <p class="review__date">16 декабря 2019, понедельник</p>
+            <p class="review__place"><span class="review_red">Город:</span> Москва</p>
+            <p class="review__estimate"><span class="review_red">Оценка:</span>
+              <img src="img/stars.png" class="review__stars"></p>
+            <p class="review__advantages"><span class="review_red">Достоинства:</span> оперативность доставки, хорошие
+              цены</p>
+            <p class="review__disadvantages"><span class="review_red">Недостатки:</span> не нашёл</p>
+            <p class="review__title"><span class="review_red">Отзыв:</span></p>
+            <p class="review__text">Купил перфоратор STERN, управляющий сам меня консультировал, подробно все рассказал
+              о
+              преимуществах, провёл сравнение междутремя инструментами. Видно, что профессионал, цена меня особо не
+              волновала, но и в этом плане я остался доволен.</p>
+          </div>
+
+          <div class="focused__review">
+            <p class="review__date">16 декабря 2019, понедельник</p>
+            <p class="review__place"><span class="review_red">Город:</span> Москва</p>
+            <p class="review__estimate"><span class="review_red">Оценка:</span>
+              <img src="img/stars.png" class="review__stars"></p>
+            <p class="review__advantages"><span class="review_red">Достоинства:</span> оперативность доставки, хорошие
+              цены</p>
+            <p class="review__disadvantages"><span class="review_red">Недостатки:</span> не нашёл</p>
+            <p class="review__title"><span class="review_red">Отзыв:</span></p>
+            <p class="review__text">Купил перфоратор STERN, управляющий сам меня консультировал, подробно все рассказал
+              о
+              преимуществах, провёл сравнение междутремя инструментами. Видно, что профессионал, цена меня особо не
+              волновала, но и в этом плане я остался доволен.</p>
+          </div>
+
+          <div class="focused__review">
+            <p class="review__date">16 декабря 2019, понедельник</p>
+            <p class="review__place"><span class="review_red">Город:</span> Москва</p>
+            <p class="review__estimate"><span class="review_red">Оценка:</span>
+              <img src="img/stars.png" class="review__stars"></p>
+            <p class="review__advantages"><span class="review_red">Достоинства:</span> оперативность доставки, хорошие
+              цены</p>
+            <p class="review__disadvantages"><span class="review_red">Недостатки:</span> не нашёл</p>
+            <p class="review__title"><span class="review_red">Отзыв:</span></p>
+            <p class="review__text">Купил перфоратор STERN, управляющий сам меня консультировал, подробно все рассказал
+              о
+              преимуществах, провёл сравнение междутремя инструментами. Видно, что профессионал, цена меня особо не
+              волновала, но и в этом плане я остался доволен.</p>
+          </div>
+        </div>
+
+        <img src="img/clients_else.png" class="clients_else">
+      </div>
+    </div>
+  </section>
+
+  <section class="form">
+    <div class="container">
+      <div class="form__border">
+        <form action="#">
+          <h2 class="form__title">Остались вопросы?</h2>
+          <h3 class="form__subtitle">Оставьте заявку и наш специалист пассчитает стоимость<br>и сроки выполнения вашей
+            заявки. И перезвонит вам.</h3>
+          <div class="form_inputs">
+            <input type="text" class="form_name" placeholder="Ваше имя">
+            <input type="text" class="form_city" placeholder="Ваш город">
+            <input type="tel" class="form_tel" placeholder="Ваш телефон">
+            <input type="email" class="form_email" placeholder="Ваш e-mail">
+          </div>
+          <textarea class="form__message" placeholder="Ваш текст вопроса или заявки"></textarea>
+          <input type="submit" value="Отправить" class="form__submit">
+        </form>
+
+        <div class="form__tr"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map" id="contacts">
+    <iframe
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3A1cefd0a6610e8df6a62f03cb0bdbc454684e1ce2848a2dc65c3bb10e7b3888e4&amp;source=constructor"
+      width="100%" height="568" frameborder="0"></iframe>
+
+    <div class="address-container">
+      <div class="address">
+        <p><b>г. Москва</b></p>
+        <p>141044, М.О. Мытищинский р-н, д.Грибки </p>
+        <p>ул.Складская вл.3 стр.1</p>
+        <p class="tel">8 (495) 640-40-66</p>
+        <p>8 (916) 833-66-64</p>
+      </div>
+      <div class="address_tel"></div>
+    </div>
+  </section>
+
+  <footer>
+
+    <div class="footerLogoContainer">
+      <div class="footerLogo">
+        <img src="img/logo.png">
+        <p class="footerText">про-к<span class="red">о</span>мплект</p>
+      </div>
+      <div class="footerTr"></div>
+    </div>
+
+    <div class="container">
+      <div class="footer__list">
+        <div class="footer__item footer__links">
+          <a href="#" class="footer__link">
+            <img src="img/vk1.png">
+          </a>
+          <a href="#" class="footer__link">
+            <img src="img/fb1.png">
+          </a>
+          <a href="#" class="footer__link">
+            <img src="img/tw1.png">
+          </a>
+          <a href="#" class="footer__link">
+            <img src="img/ok1.png">
+          </a>
+          <a href="#" class="footer__link">
+            <img src="img/ig1.png">
+          </a>
+        </div>
+        <div class="footer__item">
+          <h3 class="footer__title">Контакты</h3>
+
+          <div class="footer__item_data">
+            <img src="img/tel.png" class="footer__item_logo">
+            <div class="footer__item_text">
+              <p class="fw_bold">+7 (495) 640-40-66</p>
+              <p class="fw_bold">+7 (916) 833-66-64</p>
+            </div>
+          </div>
+
+          <div class="footer__item_data">
+            <img src="img/house.png" class="footer__item_logo">
+            <div class="footer__item_text">
+              <p>г. Москва</p>
+              <p>М.О. Мытищинский р-н, д.Грибки</p>
+              <p>ул. Складская вл.3 стр.1</p>
+            </div>
+          </div>
+
+          <div class="footer__item_data">
+            <img src="img/time.png" class="footer__item_logo">
+            <div class="footer__item_text fw_bold">с 9:00 - 18:00 мск</div>
+          </div>
+
+          <div class="footer__item_data">
+            <img src="img/at.png" class="footer__item_logo">
+            <div class="footer__item_text">info@interprogroup.ru</div>
+          </div>
+        </div>
+        <div class="footer__item">
+          <h3 class="footer__title">Обратная связь</h3>
+
+          <form action="#" class="footer__form">
+            <input type="text" class="footer_contact" placeholder="Ваш телефон или e-mail">
+            <textarea class="footer_textarea" placeholder="Введите текст зазпрса или заявки"></textarea>
+            <input type="submit" value="Отправить" class="form_submit">
+          </form>
+        </div>
+        <div class="footer__item">
+          <h3 class="footer__title">Рубрики</h3>
+          <ul>
+            <li>
+              <span class="footer__num">1</span>
+              <a href="#main" class="footer__num_link">Главная</a>
+            </li>
+            <li>
+              <span class="footer__num">2</span>
+              <a href="#about" class="footer__num_link">О компании</a>
+            </li>
+            <li>
+              <span class="footer__num">3</span>
+              <a href="#catalog" class="footer__num_link">Каталог</a>
+            </li>
+            <li>
+              <span class="footer__num">4</span>
+              <a href="#work" class="footer__num_link">Услуги</a>
+            </li>
+            <li>
+              <span class="footer__num">5</span>
+              <a href="#clients" class="footer__num_link">Партнеры</a>
+            </li>
+            <li>
+              <span class="footer__num">6</span>
+              <a href="#contacts" class="footer__num_link">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="underFooter">Компания «Про-Комплект». Материалы для строительства © Москва. 2005 - 2020. Все права
+      защищены</div>
+  </footer>
+
+  <div class="popup__container">
+    <div class="popup">
+      <h2 class="popup__title">Обратная связь</h2>
+      <form action="#">
+        <input type="text" class="popup__contact" placeholder="Телефон или e-mail">
+        <textarea class="popup__textarea" placeholder="Введите текст сообщения"></textarea>
+        <input type="submit" value="Отправить" class="popup__submit">
+      </form>
+
+      <button class="popup__close">
+        <img src="img/cross.svg">
+      </button>
+    </div>
+  </div>
+
+  <script src="jQuery.js"></script>
+  <script src="slick.js"></script>
+  <script>
+    setInterval(() => {
+      let width = $('.address-container p').width()
+      $('.address_tel').css({
+        'borderLeft': width / 2 + 'px solid transparent',
+        'borderRight': width / 2 + 'px solid transparent'
+      })
+    }, 1000 / 10)
+
+    $('.header__request, .free-consultation').on('click', function (e) {
+      e.preventDefault()
+      $('.popup__container').css('display', 'flex')
+      $('body').css('overflow', 'hidden')
+
+      $('.popup__close').on('click', function () {
+        $('.popup__container').css('display', 'none')
+        $('body').css('overflow', 'auto')
+      })
+    })
+
+    $('#main').slick({
+      autoplay: true,
+      autoplaySpeed: 2000
+    })
+
+    $('.clients__list').slick({
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      slidesToShow: 5,
+      slidesToScroll: 1
+    })
+
+    $('.reviews__list').slick({
+      slidesToShow: 1
+    })
+
+    $('.an_nums').each(function () {
+      $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+      }, {
+        duration: 4000,
+        easing: 'swing',
+        step(now) {
+          $(this).text(Math.ceil(now))
+        }
+      })
+    })
+  </script>
+
+</body>
+
+</html>
